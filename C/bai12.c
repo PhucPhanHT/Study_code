@@ -2,13 +2,16 @@
 #include <stdio.h>
 
 signed main(){
-    char hoten[20];
-    
-    int tongdiem;
+    char hoten[20];	
+    float tongdiem;
     printf("Nhap Ho Ten: ");
     gets(hoten);
     printf("\nNhap tong diem: ");
-    scanf("%d",&tongdiem);
+    scanf("%f",&tongdiem);
+    while (tongdiem < 0 || tongdiem > 10){
+    	printf("Vui long nhap lai diem lon hon bang 0 va nho hon bang 10: ");
+		scanf("%f",&tongdiem);
+	}
     if (tongdiem < 5){
         printf("Ho ten: %s , xep loai: Kem",hoten);
     }

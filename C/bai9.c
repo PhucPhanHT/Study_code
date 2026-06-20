@@ -5,8 +5,8 @@ Neu chu vi p=(a + b + c)/2;  Dien tich cua tam giac  s=sqrt(p(p-a)(p-b)(p-c))
 #include <math.h>
 
 signed main(){
-	int a,b,c;
-	scanf("%d %d %d",&a,&b,&c);
+	float a,b,c;
+	scanf("%f %f %f",&a,&b,&c);
 	if ((a + b > c) && (a + c > b) && (b + c > a)){
 		float p = (float) ((1.0) * (a + b + c)) / 2;
 		float s = sqrt(1.0 * p* (p - a)* (p - b) * (p - c));
@@ -14,7 +14,7 @@ signed main(){
 		printf("Dien tich tam giac: %f\n",s);
 	}
 	else{
-		printf("3 so da nhap khong tao thanh tam giac\n");
+		printf("Day khong phai la tam giac\n");
 	}
 	return 0;
 }

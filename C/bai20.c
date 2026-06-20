@@ -13,61 +13,48 @@ I= 100+20-30+…+(-1)n*(10*n)
 #include <math.h>
 
 signed main(){
-    int n;
+    int n,i,x;
     printf("Vui long nhap n: ");
-    scanf("%d",n);
-    long long A = 0;
-    for(long long i = 1;i <= (n * (n + 1));i++){
-        A += 1ll * i * (i + 1);
-    }
-    double B = 10;
-    int x;
-    scanf("%d",x);
-    while(x == 0){
-        printf("Vui long nhap lai x != 0: ");
-        scanf("%d",x);
-    }
-    for(int i = 2;i <= n;i++){
-        B += (double) i / (1.0 * x);
-    }
-    double C = 0;
-    for(int i = 1;i <= n;i++){
-        C += (double) sqrt(i);
-    }
-    double D = 0;
-    for(int i = 1;i <= 2 * n + 1;i+= 2){
-        D += (double)1 / 1.0 * i;
-    }
-    int F = 0;
-    for(int i = 1;i <= 2 * n + 1;i+= 2){
-        F += i;
-    }
-    double F2 = 0;
-    for(int i = 1;i <= n;i++){
-        F2+= (double) (epx(i*x));
-    }
-    int T = 0;
-    if (n % 2 == 0){
-        for(int i = 1;i <= n;i+= 2){
-            T += i;
-        }
-    }
-    else {
-        for(int i = 2;i <= n;i+= 2){
-            T += i;
-        }
-    }
-    int I = 100;
-    for(int i = 1;i <= n;i++){
-        I += pow(-1,i)*(10 * n);
-    }
-    printf("A = %d",A);
-    printf("B = %d",B);
-    printf("C = %d",C);
-    printf("D = %d",D);
-    printf("F = %d",F);
-    printf("F2 = %d",F2);
-    printf("T = %d",T);
-    printf("I = %d",I);
+    scanf("%d",&n);
+    while(n < 0){
+    	printf("Nhap lai n > 0: ");
+    	scanf("%d",&n);
+	}
+    float C = 0;
+    for(i = 1;i <= n;i+=2){
+    	C += (1.0) * sqrt(i);
+	}
+	printf("C = %f\n",C);
+    float D = 1;
+    for(i = 1;i <= n;i++){
+    	D += 1 / ((1.0) * (2 * n + 1));
+	}
+	printf("D = %f\n",D);
+	int F = 0;
+	for(i = 1;i <= n;i++){
+		F += (2 * n + 1);
+	}
+	printf("F = %d",F);
+	printf("\nNhap x: ");
+	scanf("%d",&x);
+	while(x < 0){
+		printf("Vui long nhap lai x > 0: ");
+		scanf("%d",&x);
+	}
+	float T = 100;
+	for(i = 1;i <= n;i++){
+		if (i % 2 == 1){
+			T +=  x / ((1.0) *  (10 * i));
+		}
+		else T -= x / ((1.0) * (10 * i));
+	}
+	printf("T = %.2f\n",T);
+	float F2 = 0;
+	for(i = 1;i <= n;i++){
+		F2 += exp(i * x);
+	}
+	printf("F2 = %f\n",F2);
+	int I = 100;
+	
     return 0;
 }

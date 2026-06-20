@@ -3,11 +3,13 @@
 
 signed main(){
     float a,b;
+    printf("Vui long nhap a va b: ");
     scanf("%f %f",&a,&b);
     if (a == 0){
         if (b == 0){
             printf("Phuong trinh co vo so nghiem\n");
         }
+		}
         else{
             printf("Phuong trinh vo nghiem\n");
         }

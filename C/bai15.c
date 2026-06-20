@@ -11,21 +11,23 @@ signed main(){
     int a,b;
     char ch;
     printf("Vui long nhap so a,b va phep toan ch: ");
-    scanf("%d %d %c",&a,&b,&ch);
-    if (ch == '+'){
-        printf("%d + %d = %d",a,b,a + b);
-    }
-    else if (ch == '-'){
-        printf("%d - %d = %d",a,b,a - b);
-    }
-    else if (ch == '*'){
-        printf("%d * %d = %d",a,b,a * b);
-    }
-    else if (ch == '/'){
-        printf("%d * %d = %d",a,b,a / b);
-    }
-    else{
-        printf("Khong phai phep toan");
-    }
+    scanf("%d %d",&a,&b);
+    fflush(stdin);
+    ch = getchar();
+    switch (ch){
+    	case '+':
+    		printf("%d + %d = %d",a,b,a + b);
+    		break;
+    	case '-':
+    		printf("%d - %d = %d",a,b,a - b);\
+    		break;
+    	case '*':
+    		printf("%d * %d = %d",a,b,a * b);
+    		break;
+    	case '/':
+    		printf("%d / %d = %d",a,b,(float)(a / (float)b));
+    		break;
+	}
+	
     return 0;
 }
